@@ -1,0 +1,54 @@
+<!--
+  Karim Fouad 101244311
+  Fall 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <div id="userInputDiv">
+            <h3>Robo Poet</h3>
+            <p>Experiencing writer's block? Looking to inspire creative juices? Try Robo Poet now!</p>
+
+            <div>
+                Username
+                <input id="signupUsername" type="text" />
+            </div>
+
+            <div>
+                Password
+                <input id="signupPassword" type="password" />
+            </div>
+
+            <button id="signupButton">Sign up</button>
+            <div id="errorDiv"></div>
+
+            <div>
+                Already have an account?
+                <a href="{{authRoute}}">Login</a>
+            </div>
+        </div>
+
+        <div id="footer">
+            Developed by Karim Fouad (student id: 101244311)
+            <br>
+            COMP2406 Term Project - Fall 2022
+            <br>
+            Carleton University
+        </div>
+    </div>
+
+    <script src="js/error.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+
+</html>

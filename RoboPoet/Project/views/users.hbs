@@ -1,0 +1,51 @@
+<!--
+  Karim Fouad 101244311
+  Fall 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h2>Robo Poet</h2>
+        <div>
+            <a href="{{poemsRoute}}">< Return to poems</a>
+            |
+            <a href="{{signupRoute}}">Register new user</a>
+        </div>
+
+        <h3>List of active users</h3>
+        <div id="userList">
+            <h4>Administrators</h4>
+            {{#each users}}
+                {{#if this.isAdmin}}
+                    <div class="userRow">{{this.userid}}</div>
+                {{/if}}
+            {{/each}}
+
+            <h4>Regular users</h4>
+            {{#each users}}
+                {{#unless this.isAdmin}}
+                <div class="userRow">{{this.userid}}</div>
+                {{/unless}}
+            {{/each}}
+        </div>
+
+        <div id="footer">
+            Developed by Karim Fouad (student id: 101244311)
+            <br>
+            COMP2406 Term Project - Fall 2022
+            <br>
+            Carleton University
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!--
+  Karim Fouad 101244311
+  Fall 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <div id="userInputDiv">
+            <h2>Robo Poet</h2>
+            <p>Experiencing writer's block? Looking to inspire creative juices? Try Robo Poet now!</p>
+            <p>Logged in as: <b>{{userId}}</b>
+                (
+                    {{#if isAdmin}}
+                        <a href="{{usersRoute}}">View Users</a> |
+                    {{/if}}
+                        <a href="{{signupRoute}}">Register new user</a>
+                )
+            </p>
+            <p>Enter a poem Topic and a Style below, then watch as <a href="https://beta.openai.com/docs/quickstart" target="_blank">OpenAI ChatGPT</a> skillfully threatens all our creative jobs!</p>
+
+            <div id="examples">
+                <p>Here are some examples you could type in(topic | style):</p>
+                <button>Pokemon | Shakespeare</button>
+                <button>Firefox | Graduation Speech</button>
+                <button>BBQ sauce | Marketing Tweet</button>
+                <button>Music | Customer complaint</button>
+                <button>Crypto | Baby shark</button>
+                <button>COMP2406 | Rap </button>
+            </div>
+
+
+            <div>
+                Topic
+                <input id="poemTopicField" type="text" value="Pokemon" />
+            </div>
+
+            <div>
+                Style
+                <input id="poemStyleField" type="text" value="Shakespeare" />
+            </div>
+
+            <div>
+                Max word count: <span id="poemCurrentMaxWordCount"></span>
+                <input id="poemMaxWordCountSlider" type="range" min="20" max="2000" value="200" />
+            </div>
+
+            <button id="submitButton">Generate Poem!</button>
+
+
+            <div id="usageNoticeDiv">
+                Please respect the OpenAI
+                <a href="https://beta.openai.com/docs/usage-policies" target=_blank>Usage Policy</a>.
+                Violations of the policy risk invalidating our API key.
+            </div>
+
+            <div id="errorDiv"></div>
+        </div>
+
+        <div id="poemDiv"></div>
+
+        <div id="footer">
+            Developed by Karim Fouad (student id: 101244311)
+            <br>
+            COMP2406 Term Project - Fall 2022
+            <br>
+            Carleton University
+        </div>
+    </div>
+
+    <script src="js/error.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/getPoem.js"></script>
+    <script src="js/events.js"></script>
+</body>
+
+</html>
